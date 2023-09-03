@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" color="light" routerLink="/dashboard">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div class="new-product" routerLink="/new-product">
+  +
+  </div>
+
+  <!-- reuse -->
+
+  <ion-card *ngFor="let tempProd of products">
+    <img alt="Silhouette of mountains" src="{{tempProd?.url}}" />
+    <ion-card-header>
+      <ion-card-title>{{tempProd?.name}}</ion-card-title>
+      <ion-card-subtitle>{{tempProd?.price}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{tempProd?.description}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
